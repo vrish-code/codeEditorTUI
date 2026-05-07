@@ -1,7 +1,7 @@
 import os
 import time
 
-def commandModeEditor():
+def codeEditor():
     commandsGlobal=["editor --open", "editor --new", "editor --quit", "read"]
     def commandMode(commands):
         print("___________________________________")
@@ -78,8 +78,27 @@ def commandModeEditor():
                      quit()
          else:
           print("### Invalid Path ###")
+     elif commEntered=="read":
+        filePathRead=input("Enter the file path to be opened.\n").upper().strip()
+        print("_______________________________")
+        if filePathRead.startswith("c:") or filePathRead.startswith("C:"):
+            if os.path.exists(filePathRead):
+                with open(filePathRead, "r",encoding='utf-8') as f:
+                    codeOpened=f.read()
+                print(codeOpened)
+                print("_______________________________")
+     elif commEntered=="editor --quit":
+        progBarQuit=""
+        for i in range(20):
+            progBarQuit+="#"
+            print(f"[{progBarQuit}] [Quitting editor...]" , end="\r", flush=True)
+            time.sleep(0.1)
+        print()
+        return
+    
+  
 
-commandModeEditor()
+codeEditor()
                  
 
 
