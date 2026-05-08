@@ -32,8 +32,6 @@ def codeEditor():
                     if newCode:
                         saveConf=input("Save code (Y/n)").upper().strip()
                         if saveConf=="Y":
-                            print("You are saving your code into a folder in Projects")
-                            folderName=input("Enter a name for the folder")
                             progBar=""
                             for i in range(20):
                                 progBar+="#"
