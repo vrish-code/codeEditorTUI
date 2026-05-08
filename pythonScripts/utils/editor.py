@@ -1,6 +1,6 @@
 import os
 import time
-import pythonScripts.utils.fileOperations as fileOperations
+
 def codeEditor():
     commandsGlobal=["editor --open", "editor --new", "editor --quit", "read"]
     def commandMode(commands):
@@ -61,7 +61,7 @@ def codeEditor():
                 count=0
                 while True:
                   codeLnNew=input("Enter the code you want to save to the file (press cl to stop editing)\n")
-                  print("_______________________________")
+                  print("_______________/________________")
                   if codeLnNew=="cl":
                     break
                   count+=1
@@ -101,6 +101,8 @@ def codeEditor():
             time.sleep(0.1)
         print()
         return
+    else:
+        print(" ### INVALID COMMAND ###")
     
   
 
