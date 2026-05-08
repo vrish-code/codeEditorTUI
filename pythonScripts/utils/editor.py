@@ -1,6 +1,6 @@
 import os
 import time
-
+import datetime as dt
 def codeEditor():
     commandsGlobal=["editor --open", "editor --new", "editor --quit", "read"]
     def commandMode(commands):
@@ -32,6 +32,8 @@ def codeEditor():
                     if newCode:
                         saveConf=input("Save code (Y/n)").upper().strip()
                         if saveConf=="Y":
+                            print("You are saving your code into a folder.")
+                            folderName=input("Enter a name for the folder")
                             progBar=""
                             for i in range(20):
                                 progBar+="#"
@@ -40,7 +42,7 @@ def codeEditor():
                             print("\n")
                             print("__________________________________")
                             with open(filePath,"w", encoding='utf-8') as f:
-                                f.write("\n".join(newCode))
+                                f.write("\n".join(newCode))   
                             commandModeGoBack=input("Go back to command mode? (Y/n)").upper().strip()
                             print("_______________________________")
                             if commandModeGoBack=="Y":
