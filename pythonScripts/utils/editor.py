@@ -61,11 +61,11 @@ def codeEditor():
                 count=0
                 while True:
                   codeLnNew=input("Enter the code you want to save to the file (press cl to stop editing)\n")
-                  print("_______________/________________")
+                  print("_______________________________")
                   if codeLnNew=="cl":
                     break
                   count+=1
-                  newCode.append([count, codeLnNew])
+                  newCode.append(f"{count} {codeLnNew}")
                 progBar=""
                 for i in range(20):
                     progBar+="#"
