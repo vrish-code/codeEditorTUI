@@ -1,6 +1,6 @@
 import os
 import time
-import datetime as dt
+import pythonScripts.utils.fileOperations as fileOperations
 def codeEditor():
     commandsGlobal=["editor --open", "editor --new", "editor --quit", "read"]
     def commandMode(commands):
@@ -32,7 +32,7 @@ def codeEditor():
                     if newCode:
                         saveConf=input("Save code (Y/n)").upper().strip()
                         if saveConf=="Y":
-                            print("You are saving your code into a folder.")
+                            print("You are saving your code into a folder in Projects")
                             folderName=input("Enter a name for the folder")
                             progBar=""
                             for i in range(20):
@@ -52,18 +52,22 @@ def codeEditor():
                             pass
                 else:
                     quit()
+            else:
+                print("##### INVALID FILE PATH #####")
      elif commEntered=="editor --new":
          fileNew=input("Enter the new file's path\n").strip()
          print("_____________________________")
          if fileNew.startswith("c:") or fileNew.startswith("C:"):
              if not os.path.exists(fileNew):
                 newCode=[]
+                count=0
                 while True:
                   codeLnNew=input("Enter the code you want to save to the file (press cl to stop editing)\n")
                   print("_______________________________")
                   if codeLnNew=="cl":
                     break
-                  newCode.append(codeLnNew)
+                  count+=1
+                  newCode.append([count, codeLnNew])
                 progBar=""
                 for i in range(20):
                     progBar+="#"
@@ -79,7 +83,7 @@ def codeEditor():
                  else:
                      quit()
          else:
-          print("### Invalid Path ###")
+          print("### INVALID FILE PATH ###")
      elif commEntered=="read":
         filePathRead=input("Enter the file path to be opened.\n").upper().strip()
         print("_______________________________")
@@ -89,6 +93,8 @@ def codeEditor():
                     codeOpened=f.read()
                 print(codeOpened)
                 print("_______________________________")
+        else:
+          print("### INVALID FILE PATH ###")
      elif commEntered=="editor --quit":
         progBarQuit=""
         for i in range(20):
