@@ -8,7 +8,7 @@ def codeEditor():
         print("##### COMMANDS #####")
         print(commands,"\n")
         print("_______________________")
-    commandMode()
+    commandMode(commandsGlobal)
     while True:
         commEntered = input("Enter a command\n").strip()
         if commEntered in commandsGlobal:
