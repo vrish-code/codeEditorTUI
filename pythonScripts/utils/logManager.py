@@ -98,7 +98,7 @@ def logsManager():
         else:
             print("### INVALID COMMAND ###") 
 
-logsManager()       
+      
                
             
         

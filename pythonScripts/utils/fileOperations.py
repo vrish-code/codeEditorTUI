@@ -55,5 +55,3 @@ def fileOps():
     else:
         print("Invalid command!")
 
-
-fileOps()
