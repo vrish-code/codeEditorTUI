@@ -6,7 +6,7 @@ def setFlag():
 
 st.title("Download TermCode 1.29.0 Executable Here.")
 st.divider()
-with open("TermCode-Downloading-website-and-.exe-here\TermCode.exe", "rb") as f:
+with open("TermCode.exe", "rb") as f:
     st.download_button(label="TermCode",
                        data=f,
                        file_name=r"TermCode.exe",
