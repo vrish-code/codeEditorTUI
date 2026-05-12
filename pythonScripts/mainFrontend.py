@@ -2,7 +2,7 @@ from utils import aiMode as aim
 from utils import fileOperations as fop
 from utils import logManager as lm
 from utils import editor as ed
-
+import time
 
 def main():
     info = """\n### TERM-CODE INFO ###
@@ -55,7 +55,13 @@ ____________________________________________________"""
         elif command==commandList[6]:
            print(version, "\n")
         else:
-           quit()
+            progBarQuit = ""
+            for i in range(20):
+                progBarQuit += "#"
+                print(f"[{progBarQuit}] [Quitting editor...]", end="\r", flush=True)
+                time.sleep(0.1)
+            print("\n")
+            quit
 
         
 if __name__=="__main__":

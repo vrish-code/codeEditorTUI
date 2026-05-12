@@ -1,8 +1,26 @@
 import os
 import time
+info = """This workspace module loads the core CLI code engine for active file manipulation.
+It reads raw code streams, generates fresh script paths, and opens direct multi-line text editors."""
+
+help = f"""
+======================================================================
+                        📝 EDITOR COMMANDS
+======================================================================
+  🔹 editor--open : Open an existing script file to inspect or edit text.
+  🔹 editor--new  : Create a brand new file with automated line indexing.
+  🔹 editor--read : Display file contents to the viewport without editing.
+  🔹 editor--quit : Exit out of the code editor module interface.
+
+⚠️ RUNTIME WORKFLOW NOTE:
+  • Line Termination : Type 'cl' on an empty line to freeze and close edits.
+  • Path Verification: Requires absolute storage addresses starting with C:.
+  • File Protection  : Target system locks active scripts inside the container.
+======================================================================
+"""
 
 def codeEditor():
-    commandsGlobal=["editor --open", "editor --new", "editor --quit", "read"]
+    commandsGlobal=["editor--open", "editor--new", "editor--quit", "editor--read", "editor--help", "editor--info"]
     def commandMode(commands):
         print("___________________________________")
         print("##### COMMANDS #####")
@@ -70,7 +88,7 @@ def codeEditor():
                             f.write("\n".join(newCode))
                 else:
                     print("### INVALID FILE PATH ###")
-            elif commEntered == "read":
+            elif commEntered == "editor--read":
                 filePathRead = input("Enter the file path to be opened.\n").upper().strip()
                 print("_______________________________")
                 if filePathRead.startswith("C:"):
@@ -81,7 +99,7 @@ def codeEditor():
                         print("_______________________________")
                 else:
                     print("### INVALID FILE PATH ###")
-            elif commEntered == "editor --quit":
+            elif commEntered == "editor--quit":
                 progBarQuit = ""
                 for i in range(20):
                     progBarQuit += "#"
@@ -89,40 +107,9 @@ def codeEditor():
                     time.sleep(0.1)
                 print("\n")
                 return
+            elif commEntered=="editor--help":
+                print(help)
+            elif commEntered=="editor--info":
+                print(info)
         else:
             print(" ### INVALID COMMAND ###")
-
-  
-                 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

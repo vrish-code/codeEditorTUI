@@ -1,7 +1,25 @@
 import os
 import time
-commandList=["fileOps--findRep", "fileOps--rename", "fileOps--delete", "fileOps--quit"]
+commandList=["fileOps--findRep", "fileOps--rename", "fileOps--delete", "fileOps--quit", "fileOps--help", "fileOps--info"]
 userProfile=os.environ["USERPROFILE"]
+info = """This core text editor module automates terminal-driven file system actions on Windows.
+It grants direct local access to search and replace text, rename files, and delete items."""
+
+help = f"""
+======================================================================
+                        📋 OPERATION COMMANDS
+======================================================================
+  🔹 fileOps--findRep : Search file content and replace matching strings.
+  🔹 fileOps--rename  : Move or change a file path to a new location.
+  🔹 fileOps--delete  : Instantly remove a target file from disk.
+  🔹 fileOps--quit    : Safely terminate the file operations sub-shell.
+
+⚠️ REQUIREMENT RULES:
+  • Paths must target your main storage drive partition (C: or c:).
+  • All file deletion commands bypass the Windows Recycle Bin.
+  • Active Workspace User Profile: {userProfile}
+======================================================================
+"""
 def fileOps():
  def commands(comm):
     print("##### COMMANDS #####")
@@ -52,6 +70,10 @@ def fileOps():
                 time.sleep(0.1)
             print()
             return
+        elif commandEntered == commandList[4]:
+            print(info)
+        elif commandEntered ==commandList[5]:
+            print(help)
     else:
-        print("Invalid command!")
+        print("### INVALID COMMAND ###")
 

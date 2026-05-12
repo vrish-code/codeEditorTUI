@@ -8,6 +8,8 @@ def aiMode():
    while True:
       prompt=input("Enter a prompt.\n")
       pathsForContext=[]
+      if prompt=="exit" or prompt=="quit":
+         return
       while True:
         pathForContext=input("Enter a file path for context. Press cl to exit.\n")
         print("___________________")
