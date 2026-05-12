@@ -17,7 +17,10 @@ def aiMode():
            break
         pathsForContext.append(pathForContext)
       readList=[]
-
+      if apiKey==None:
+         print("### ERROR ###")
+         print("Set your api key in the .env.example file and rename the extension if needed.")
+         return
       for i in range(len(pathsForContext)):
          with open(pathsForContext[i], "r") as f:
             readList.append(f.read()) 
