@@ -23,7 +23,7 @@ Available Commands:
   term-code --version         Display current version build metadata.
   term-code --exit            Safely terminate the active terminal session.
 ____________________________________________________"""
-    version="1.0.0"
+    version="1.29.0"
     print("### TERM-CODE ###\n")
     print("______________________________")
     print("\t### COMMANDS ###")
