@@ -1,7 +1,7 @@
-# codeEditorTUI
-A terminal based modal code editor like vi.
-#Getting started
-Download the ZIP file and open the .exe file to start the code editor. 
+# TermCode
+A terminal based CLI code editor.
+Getting started
+Download from the streamlit website.
 #Key disclaimer
 Very minimal
 No syntax highlighting or integrated terminal -- editor runs directly IN the terminal
